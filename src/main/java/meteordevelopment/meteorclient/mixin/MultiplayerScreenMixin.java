@@ -42,10 +42,10 @@ public abstract class MultiplayerScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     private void onInit(CallbackInfo info) {
-        textColor1 = Color.fromRGBA(255, 255, 255, 255);
-        textColor2 = Color.fromRGBA(175, 175, 175, 255);
+        textColor1 = Color.fromRGBA(255, 255, 255, 0);
+        textColor2 = Color.fromRGBA(175, 175, 175, 0);
 
-        loggedInAs = "Logged in as ";
+        loggedInAs = " ";
         loggedInAsLength = textRenderer.getWidth(loggedInAs);
 
         addDrawableChild(
@@ -77,7 +77,7 @@ public abstract class MultiplayerScreenMixin extends Screen {
         // Proxy
         Proxy proxy = Proxies.get().getEnabled();
 
-        String left = proxy != null ? "Using proxy " : "Not using a proxy";
+        String left = proxy != null ? " " : " ";
         String right = proxy != null ? (proxy.name.get() != null && !proxy.name.get().isEmpty() ? "(" + proxy.name.get() + ") " : "") + proxy.address.get() + ":" + proxy.port.get() : null;
 
         context.drawTextWithShadow(mc.textRenderer, left, x, y, textColor1);
