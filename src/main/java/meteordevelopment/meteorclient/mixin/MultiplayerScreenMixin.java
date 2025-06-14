@@ -42,8 +42,8 @@ public abstract class MultiplayerScreenMixin extends Screen {
 
     @Inject(method = "init", at = @At("TAIL"))
     private void onInit(CallbackInfo info) {
-        textColor1 = Color.fromRGBA(255, 255, 255, 255);
-        textColor2 = Color.fromRGBA(175, 175, 175, 255);
+        textColor1 = Color.fromRGBA(255, 255, 255, 0);
+        textColor2 = Color.fromRGBA(175, 175, 175, 0);
 
         loggedInAs = "Logged in as ";
         loggedInAsLength = textRenderer.getWidth(loggedInAs);
